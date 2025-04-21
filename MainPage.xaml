@@ -44,8 +44,7 @@
             <Label Text="PARCIAL 2"
                    TextColor="ForestGreen"/>
 
-            <Label Text="Nota Seguimiento 2:" 
-                   TextColor="ForestGreen"/>
+            <Label Text="Nota Seguimiento 2:"/>
             <Entry x:Name="txtNota2" 
                    Keyboard="Numeric" 
                    Placeholder="Calificación de 0 a 10" />
