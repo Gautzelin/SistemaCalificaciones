@@ -11,6 +11,13 @@
 
         private void Button_Clicked(object sender, EventArgs e)
         {
+            // Validar que se seleccione un compañero
+            if (pkCompañero.SelectedItem == null)
+            {
+                DisplayAlert("Error", "Por favor selecciona un compañero antes de continuar.", "OK");
+                return;
+            }
+
             // Obtener los valores de las notas desde los Entry
             if (double.TryParse(txtNota1.Text, out double seguimiento1) &&
                 double.TryParse(txtExamen1.Text, out double examen1) &&
@@ -21,7 +28,7 @@
                 double parcial1 = (seguimiento1 * 0.3) + (examen1 * 0.2);
                 double parcial2 = (seguimiento2 * 0.3) + (examen2 * 0.2);
 
-                // Mostrar las notas parciales en las etiquetas correspondientes
+                // Mostrar las notas parciales
                 txtNotaParcial1.Text = parcial1.ToString("F2");
                 txtNotaParcial2.Text = parcial2.ToString("F2");
 
@@ -59,7 +66,7 @@
             }
             else
             {
-                // Si no se pudieron parsear las notas, mostrar un mensaje de error
+                // Mostrar un mensaje de error si las notas no se ingresaron correctamente
                 DisplayAlert("Error", "Por favor ingresa todas las notas correctamente", "OK");
             }
         }
